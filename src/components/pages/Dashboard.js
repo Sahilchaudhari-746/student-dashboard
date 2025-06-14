@@ -25,7 +25,7 @@ export default function Dashboard() {
   const handleSubmit = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/students', student, {
+      await axios.post('https://student-dashboard-backend-omega.vercel.app/api/students', student, {
         headers: { Authorization: `Bearer ${token}` }
       });
 toast.success('Student created successful!');
