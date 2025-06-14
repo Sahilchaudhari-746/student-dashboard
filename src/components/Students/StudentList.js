@@ -51,7 +51,7 @@ export default function StudentList() {
   const handleUpdate = async () => {
   try {
     const token = localStorage.getItem('token');
-    await axios.put(`http://localhost:5000/api/students/${selectedStudent.id}`, selectedStudent, {
+    await axios.put(`https://student-dashboard-backend-omega.vercel.app/api/students/${selectedStudent.id}`, selectedStudent, {
       headers: { Authorization: `Bearer ${token}` }
     });
     toast.success('Student updated successfully!');
