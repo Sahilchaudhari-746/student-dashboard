@@ -24,7 +24,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://student-dashboard-backend-omega.vercel.app/api/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data.id);
       localStorage.setItem('Role', res.data.role);
