@@ -14,7 +14,7 @@ export default function StudentList() {
 
   const fetchStudents = async () => {
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://localhost:5000/api/students', {
+    const res = await axios.get('https://student-dashboard-backend-omega.vercel.app/api/students', {
       headers: { Authorization: `Bearer ${token}` }
     });
     setStudents(res.data);
@@ -28,7 +28,7 @@ export default function StudentList() {
   const handleDelete = async (id) => {
   try {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:5000/api/students/${id}`, {
+    await axios.delete(`https://student-dashboard-backend-omega.vercel.app/api/students/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     toast.success('Student deleted successfully!');
